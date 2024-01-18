@@ -1,8 +1,13 @@
 import React from 'react';
 import TableBody from './TableBody.jsx';
+import { useNavigate } from 'react-router-dom';
 
 export const List = ({ employee }) => {
+    const navigate = useNavigate();
 
+    const openEmpDetail = (employeeId) => {
+        navigate(`/empDetail/${employeeId}`);
+    };
     return (
 
         <table className='min-w-full bg-white border border-gray-100 shadow-sm rounded-xl overflow-y-auto max-h-[calc(100vh-14rem)] '>
@@ -28,7 +33,7 @@ export const List = ({ employee }) => {
                     date={employee.joiningDate}
                     designation={employee.designation}
                     employeeId={employee.empID}
-
+                    openEmpDetail={() => openEmpDetail(employee._id)}
                 />
 
             ))

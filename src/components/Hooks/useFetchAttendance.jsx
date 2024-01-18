@@ -1,25 +1,24 @@
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axiosInstance from "../Utils/axiosInstance";
-import { addEmployee } from "../Utils/employeeSlice";
-import { useSelector } from "react-redux";
-const useFetchEmployee = (setIsLoading) => {
+import { addAttendance } from "../Utils/attendanceSlice";
+
+const useFetchAttendance = (setIsLoading) => {
     const dispatch = useDispatch();
 
-    const fetchEmployeeData = async () => {
+    const fetchAttendanceData = async () => {
         try {
             if (typeof setIsLoading === 'function') {
                 setIsLoading(true);
             }
-
-            const response = await axiosInstance.get('/users/employeeData');
-            dispatch(addEmployee(response.data));
+            const response = await axiosInstance.get('/users/attendanceData');
+            dispatch(addAttendance(response.data));
 
             if (typeof setIsLoading === 'function') {
                 setIsLoading(false);
             }
         } catch (error) {
-            console.error('Error fetching employee data:', error);
+            console.error('Error fetching attendace data:', error);
 
             if (typeof setIsLoading === 'function') {
                 setIsLoading(false);
@@ -28,10 +27,10 @@ const useFetchEmployee = (setIsLoading) => {
     };
 
     useEffect(() => {
-        fetchEmployeeData();
+        fetchAttendanceData();
     }, []);
 
     return {};
 };
 
-export default useFetchEmployee;
+export default useFetchAttendance;

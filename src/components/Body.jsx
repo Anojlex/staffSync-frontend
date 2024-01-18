@@ -6,7 +6,7 @@ import EmployeeProfile from './profile/EmployeeProfile.jsx';
 import LeaveManagement from './leave Management/LeaveManagement.jsx';
 import Payroll from './Payroll.jsx';
 import Connect from './Connect.jsx';
-import Attendance from './Attendance.jsx';
+import Attendance from './Attendance/Attendance.jsx';
 
 import ProfilePic from './cropper/Profile.jsx';
 

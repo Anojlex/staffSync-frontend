@@ -1,5 +1,5 @@
 import React from 'react'
-const cloudinaryBaseUrl = 'https://res.cloudinary.com/dvmjmrira/image/upload/';
+
 
 const EmployeeCard = ({ firstname, lastname, avatar, designation, openEmpDetail }) => {
 

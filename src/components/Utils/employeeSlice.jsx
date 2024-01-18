@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const employeeSlice = createSlice({
     name: "employee",
-    initialState: { data: [], loading: false },
+    initialState: { data: [] },
     reducers: {
 
         addEmployee: (state, action) => {
