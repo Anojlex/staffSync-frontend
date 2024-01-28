@@ -8,7 +8,7 @@ import { removeAdmin } from '../Utils/adminSlice.jsx';
 const Sidebar = ({ active }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const accessToken = useSelector(state => state.admin.data.accessToken)
+    const accessToken = useSelector(state => state.admin?.data?.accessToken)
     const logout = () => {
 
         dispatch(removeAdmin());

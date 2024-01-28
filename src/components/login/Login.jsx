@@ -41,7 +41,18 @@ const Login = () => {
                 navigate("/home");
             })
             .catch(error => {
-                setErrorMessage(error.response.data.message);
+                if (error.response.status === 401) {
+                    setErrorMessage("Invalid Password");
+                }
+                if (error.response.status === 404) {
+                    setErrorMessage("User not found");
+                }
+                if (error.response.status === 500) {
+                    setErrorMessage("Something went wrong");
+                }
+                if (error.response.status === 400) {
+                    setErrorMessage("Invalid email");
+                }
             });
     }
 

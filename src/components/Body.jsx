@@ -4,7 +4,7 @@ import Dashboard from './dashboard/Dashboard.jsx';
 import Login from './login/Login.jsx';
 import EmployeeProfile from './profile/EmployeeProfile.jsx';
 import LeaveManagement from './leave Management/LeaveManagement.jsx';
-import Payroll from './Payroll.jsx';
+import Payroll from './payroll/Payroll.jsx';
 import Connect from './Connect.jsx';
 import Attendance from './Attendance/Attendance.jsx';
 

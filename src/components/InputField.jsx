@@ -1,6 +1,7 @@
-const InputField = ({ label, name, type, setValue, register, errors, defaultValue, minLen, validateEmail, validatePhone, validatePassword }) => {
+const InputField = ({ label, name, type, setValue, register, errors, defaultValue, minLen, validateEmail, validatePhone, validatePassword, disabled }) => {
+
     const validationRules = {
-        required: `${label} is required.`,
+        ...(disabled ? {} : { required: `${label} is required.` }),
         minLength: minLen && {
             value: minLen,
             message: `Minimum length of ${minLen} is required.`,
@@ -24,12 +25,13 @@ const InputField = ({ label, name, type, setValue, register, errors, defaultValu
                 message: 'Invalid password. ',
             },
         }),
+
     }
 
 
 
     return (
-        <div className='flex-col text-sm text-[#64728c] m-2'>
+        <div className='flex-col text-sm text-[#64728c] m-2' >
             <div className='ml-3'>
                 <label className='m-2 text-xs text-[#64728c]'>{label}</label>
             </div>
@@ -38,6 +40,7 @@ const InputField = ({ label, name, type, setValue, register, errors, defaultValu
                 type={type}
                 defaultValue={defaultValue}
                 onChange={(e) => setValue(name, e.target.value)}
+                disabled={disabled}
                 className='m-2 h-10 w-60 text-[#5f6a7e] pl-3 text-sm flex justify-start items-center border border-gray-300 rounded-xl outline-none'
                 {...register(name, validationRules)}
             />

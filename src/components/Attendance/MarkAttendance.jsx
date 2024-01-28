@@ -4,7 +4,7 @@ import axiosInstance from '../Utils/axiosInstance';
 import { useDispatch } from 'react-redux';
 import { addAttendance } from '../Utils/attendanceSlice';
 
-const MarkAttendance = ({ changedate, date, today }) => {
+const MarkAttendance = ({ changeDate, date, today }) => {
     const dispatch = useDispatch();
 
     const employee = useSelector((state) => state.employee.data) || [];
@@ -31,11 +31,10 @@ const MarkAttendance = ({ changedate, date, today }) => {
     const isToday = date === today
     return (
         <div className='bg-white rounded-xl shadow-sm w-[80%] h-[500px] p-2  mt-3 mr-2 ' >
-            < div className='flex justify-center  h-8 text-[#64728c]font-mono pt-2 ' >
-                < img onClick={() => changedate("prev")} className="w-4 h-4 mt-1 mr-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-left' />
+            <div className='flex justify-center  h-8 text-[#64728c]font-mono pt-2 ' >
+                < img onClick={() => changeDate("prev")} className="w-4 h-4 mt-1 mr-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-left' />
                 <div className='text-[#444e61] w-20 flex justify-center'>{isToday ? "Today" : date}</div>
-                < img onClick={() => changedate("next")} className="w-4 h-4 mt-1 ml-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-right' />
-
+                < img onClick={() => changeDate("next")} className="w-4 h-4 mt-1 ml-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-right' />
             </div >
             < div className='flex  items-center h-10    m-3 py-2 bg-slate-50 text-sm font-sans-bold  text-[#64728c] ' >
                 <div className='flex-1 px-3 '>Employee</div>
@@ -44,8 +43,8 @@ const MarkAttendance = ({ changedate, date, today }) => {
                 <div className='flex-1 px-3 '>Attendance</div>
                 <div className='flex-1 px-3 '>Action</div>
                 <div className='flex-1 px-3 '></div>
-
             </div >
+
             <div className='overflow-y-auto max-h-[calc(100vh-14rem)] rounded-md h-[380px] bg-white' style={{
                 scrollbarWidth: 'none'
             }}>
@@ -60,7 +59,7 @@ const MarkAttendance = ({ changedate, date, today }) => {
                                 <div className='flex-1 px-3'>{emp.empID}</div>
                                 <div className='flex-1 px-3'>{emp.designation}</div>
                                 <div className={`flex-1 px-3 ${isPresent ? "text-green-500" : "text-red-500"}`}>
-                                    {isPresent ? 'Present' : (isAbsent ? 'Absent' : 'Not Available')}
+                                    {isPresent ? 'Present' : (isAbsent ? 'Absent' : 'Not Marked')}
                                 </div>
                                 <div className='ml-14'>
                                     <button

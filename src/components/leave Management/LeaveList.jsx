@@ -69,11 +69,11 @@ const LeaveList = ({ setOpen, setAction, setLeaveId, setComment }) => {
                     <LoadingSpinner />
                 </div>
             ) : (
-                <div className='bg-[#e8eaef]  rounded-sm flex-col  mt-6 rounded-t-3xl text-[#64728c] shadow-md '>
+                <div className='bg-white rounded-sm flex-col  mt-6 rounded-t-3xl text-[#64728c] shadow-md '>
                     <div className='bg-white h-16 rounded-t-3xl text-sm  text-[#64728c] p-6'>
                         ({filteredLeave.length > 0 ? filteredLeave.length : leaveData.length})Records found</div>
 
-                    <div className='flex items-center bg-[#e8eaef] h-10 rounded-t-3xl text-xs font-sans-regular text-[#64728c] '>
+                    <div className='flex items-center bg-slate-300 h-10 m-3 text-xs font-sans-regular rounded-t-md text-[#506181] '>
                         <div className='flex-1 px-3 text-center'>Date of Application</div>
                         <div className='flex-1 px-3 text-center'>Employee</div>
                         <div className='flex-1 px-3 text-center'>Type</div>
@@ -92,15 +92,7 @@ const LeaveList = ({ setOpen, setAction, setLeaveId, setComment }) => {
                                 filteredLeave.map((leave, index) => (
                                     <TableHeading
                                         key={index}
-                                        date={leave.date}
-                                        name={`${leave.employeeId.firstname} ${leave.employeeId.lastname}`}
-                                        type={leave.leaveType}
-                                        from={leave.fromDate}
-                                        to={leave.toDate}
-                                        noOfDays={2}
-                                        reason={leave.reason}
-                                        comment={leave.comment}
-                                        status={leave.status}
+                                        leave={leave}
                                         id={leave._id}
                                         setOpen={setOpen}
                                         setAction={setAction}
@@ -112,15 +104,7 @@ const LeaveList = ({ setOpen, setAction, setLeaveId, setComment }) => {
                                 leaveData.map((leave, index) => (
                                     <TableHeading
                                         key={index}
-                                        date={leave.date}
-                                        name={`${leave.employeeId.firstname} ${leave.employeeId.lastname}`}
-                                        type={leave.leaveType}
-                                        from={leave.fromDate}
-                                        to={leave.toDate}
-                                        noOfDays={2}
-                                        reason={leave.reason}
-                                        comment={leave.comment}
-                                        status={leave.status}
+                                        leave={leave}
                                         id={leave._id}
                                         setOpen={setOpen}
                                         setAction={setAction}

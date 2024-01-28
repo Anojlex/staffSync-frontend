@@ -2,7 +2,8 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import axiosInstance from "../Utils/axiosInstance";
 import { addEmployee } from "../Utils/employeeSlice";
-import { useSelector } from "react-redux";
+
+
 const useFetchEmployee = (setIsLoading) => {
     const dispatch = useDispatch();
 
@@ -11,10 +12,9 @@ const useFetchEmployee = (setIsLoading) => {
             if (typeof setIsLoading === 'function') {
                 setIsLoading(true);
             }
-
+            console.log('fetching employee data');
             const response = await axiosInstance.get('/users/employeeData');
             dispatch(addEmployee(response.data));
-
             if (typeof setIsLoading === 'function') {
                 setIsLoading(false);
             }
@@ -31,7 +31,7 @@ const useFetchEmployee = (setIsLoading) => {
         fetchEmployeeData();
     }, []);
 
-    return {};
+
 };
 
 export default useFetchEmployee;

@@ -43,7 +43,7 @@ const Present = ({ today }) => {
                     </div>
                 ))}
                 {filteredAttendance?.present?.map((att, index) => (
-                    <div className="bg-slate-200 h-8 flex justify-between rounded-md p-2 text-xs  text-green-600 mt-2" key={index}>
+                    < div className="bg-slate-200 h-8 flex justify-between rounded-md p-2 text-xs  text-green-600 mt-2" key={index} >
                         <div>{att.firstname}{att.lastname}</div>
                         <div>{att.empID}</div>
                     </div>

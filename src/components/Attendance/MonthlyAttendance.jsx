@@ -17,7 +17,7 @@ const MonthlyAttendance = () => {
     ];
 
     const changeMonth = (action) => {
-        if (action === "next") {
+        if (action === "next" && monthIndex !== currentMonth) {
             if (monthIndex === 11) {
                 setYear(year + 1);
                 setMonthIndex(0);

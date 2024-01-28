@@ -6,6 +6,7 @@ import Address from './Address';
 import Experience from './Experience';
 import EmergencyContact from './EmergencyContact';
 import OtherInfo from './OtherInfo';
+import Salary from './Salary';
 const Profile = ({ employeeId, openForm }) => {
 
 
@@ -22,6 +23,7 @@ const Profile = ({ employeeId, openForm }) => {
             <Address employeeId={employeeId} />
             <Education employee={employee} employeeId={employeeId} />
             <Experience employeeId={employeeId} />
+            <Salary employeeId={employeeId} />
             <EmergencyContact employeeId={employeeId} />
             <OtherInfo employeeId={employeeId} />
         </div >
