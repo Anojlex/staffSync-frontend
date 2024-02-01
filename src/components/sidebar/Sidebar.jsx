@@ -36,9 +36,7 @@ const Sidebar = ({ active }) => {
                 <Link to="/payroll" >
                     <li className={`h-10 p-3 ${active == "payroll" ? style : ""}`}>Payroll</li>
                 </Link>
-                <Link to="/connect">
-                    <li className={`h-10 p-3 ${active == "connect" ? style : ""}`}>Connect</li>
-                </Link>
+
                 <li onClick={logout} className='h-14 p-3 cursor-pointer'>Logout</li>
             </ul>
         </div >

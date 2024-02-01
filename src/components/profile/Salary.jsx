@@ -232,7 +232,7 @@ const Salary = ({ employeeId }) => {
                         <input
                             name="totalEarnings"
                             type="text"
-                            defaultValue={totalEarnings}
+                            defaultValue={isNaN(totalEarnings) ? 0 : totalEarnings.toFixed(2)}
                             disabled="true"
                             className='m-2 h-10 w-60 text-[#5f6a7e] pl-3 text-sm flex justify-start items-center border border-gray-300 rounded-xl outline-none'
 
@@ -245,7 +245,7 @@ const Salary = ({ employeeId }) => {
                         <input
                             name="totalDeductions"
                             type="text"
-                            defaultValue={totalDeductions}
+                            defaultValue={isNaN(totalDeductions) ? 0 : totalDeductions.toFixed(2)}
                             disabled="true"
                             className='m-2 h-10 w-60 text-[#5f6a7e] pl-3 text-sm flex justify-start items-center border border-gray-300 rounded-xl outline-none'
 
@@ -258,7 +258,7 @@ const Salary = ({ employeeId }) => {
                         <input
                             name="netSalary"
                             type="text"
-                            defaultValue={netSalary}
+                            defaultValue={isNaN(netSalary) ? 0 : netSalary.toFixed(2)}
                             disabled="true"
                             className='m-2 h-10 w-60 text-[#5f6a7e] pl-3 text-sm flex justify-start items-center border border-gray-300 rounded-xl outline-none'
 

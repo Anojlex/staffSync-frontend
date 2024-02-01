@@ -46,7 +46,7 @@ const OverView = ({ attendance }) => {
             <div className='flex flex-wrap justify-center items-center'>
                 <AttendanceInfoCard title="Today Present" value={`${attendance?.present?.length} / ${employee.length}`} />
                 <AttendanceInfoCard title="Planned leave" value={numberOfApprovedLeavesToday} />
-                <AttendanceInfoCard title="Unplanned leave" value={unplannedLeave < 0 ? 0 : unplannedLeave} />
+                <AttendanceInfoCard title="Unplanned leave" value={unplannedLeave < 0 ? 0 : isNaN(unplannedLeave) ? 0 : unplannedLeave} />
             </div>
         </div>
     );

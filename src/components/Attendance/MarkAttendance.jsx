@@ -3,27 +3,64 @@ import { useSelector } from 'react-redux'
 import axiosInstance from '../Utils/axiosInstance';
 import { useDispatch } from 'react-redux';
 import { addAttendance } from '../Utils/attendanceSlice';
-
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import { refreshAccessToken } from '../Utils/refreshAccessToken';
+import { addAdmin } from '../Utils/adminSlice';
 const MarkAttendance = ({ changeDate, date, today }) => {
     const dispatch = useDispatch();
-
+    const navigate = useNavigate();
     const employee = useSelector((state) => state.employee.data) || [];
+    const accessToken = useSelector((state) => state.admin.data.accessToken);
+    const refreshToken = useSelector((state) => state.admin.data.refreshToken);
+    const updateAttendance = async (id, action) => {
+        const headers = {
+            'Authorization': `Bearer ${accessToken}`,
+        };
 
-    const updateAttendance = (id, action) => {
+        try {
+            const response = await axiosInstance.post("/users/update-attendance", {
+                id: id,
+                date: date,
+                action: action
+            }, { headers });
 
-        const response = axiosInstance.post("/users/update-attendance", {
-            id: id,
-            date: date,
-            action: action
-        }).then((response) => {
             dispatch(addAttendance(response.data));
+        } catch (error) {
+            if (error.response && error.response.status === 401) {
+                // Token might be expired, attempt to refresh the token
+                try {
 
-        }).catch((err) => {
-            console.log(err);
-        })
+                    const newAccessToken = await refreshAccessToken(refreshToken);
+
+                    dispatch(addAdmin(newAccessToken));
+                    const refreshedResponse = await axiosInstance.post("/users/update-attendance", {
+                        id: id,
+                        date: date,
+                        action: action
+                    }, { headers });
+
+                    dispatch(addAttendance(refreshedResponse.data));
+                } catch (refreshError) {
+                    // Handle refresh error (e.g., redirect to login page)
+                    console.error('Failed to refresh access token:', refreshError);
+                    toast.error('Unauthorised, Please login', {
+                        position: 'bottom-left',
+                        autoClose: 1700,
+                    });
+                    setTimeout(() => {
+                        navigate('/login');
+                    }, 2000);
+                }
+            } else {
+                // Handle other errors
+                console.error(error);
+            }
+        }
+    };
 
 
-    }
+
     const attendance = useSelector((state => state.attendance.data))
 
     const todaysAttendance = attendance?.find((attend) => attend.date === date)

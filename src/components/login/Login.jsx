@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axiosInstance from '../Utils/axiosInstance';
 import { useRef, useState } from 'react';
 import formValidation from '../Utils/formValidation'
@@ -15,6 +15,7 @@ const Login = () => {
     const password = useRef(null);
     const navigate = useNavigate();
     const dispatch = useDispatch()
+    const accessToken = useSelector((state) => state.admin?.data?.accessToken);
     const validateForm = () => {
         const message = formValidation(email.current.value, password.current.value);
 
@@ -56,6 +57,16 @@ const Login = () => {
             });
     }
 
+    const checkLogin = () => {
+
+        if (accessToken) {
+
+        }
+    }
+
+    useEffect(() => {
+        checkLogin()
+    }, [])
 
     return (
         <div className='flex flex-col md:flex-row bg-[rgb(247,247,247)]'>

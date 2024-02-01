@@ -42,9 +42,9 @@ const TableData = ({ employee, openSlip }) => {
         <div className='flex items-center border-b h-14 mt-3 bg-slate-200 text-xs font-normal rounded-xl'>
             <div className='flex-1 px-3 text-left'>{employee.firstname + employee.lastname}</div>
             <div className='flex-1 px-3 text-center'>{employee.empID}</div>
-            <div className='flex-1 px-3 text-center'>{totalEarnings}</div>
-            <div className='flex-1 px-3 text-center'>{totalDeductions}</div>
-            <div className='flex-1 px-3 text-center'>{netSalary}</div>
+            <div className='flex-1 px-3 text-center'>{isNaN(totalEarnings) ? 0 : totalEarnings}</div>
+            <div className='flex-1 px-3 text-center'>{isNaN(totalDeductions) ? 0 : totalDeductions}</div>
+            <div className='flex-1 px-3 text-center'>{isNaN(netSalary ? 0 : netSalary)}</div>
             <div className='flex-1 px-3 justify-between'>
                 <img className="w-5 h-5 ml-10" src='https://img.icons8.com/windows/32/download--v1.png' alt='' />
                 <p onClick={openPaySlip} className='text-xs w-16 ml-5 text-center cursor-pointer hover:text-blue-500'>PaySlip</p>
