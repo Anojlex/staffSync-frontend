@@ -97,7 +97,7 @@ const Salary = ({ employeeId }) => {
                 onSubmit={handleSubmit(onSubmit)}
                 className='flex-col w-12% h-fit bg-[#ffffff] rounded-md  p-2 '
             >
-                <div className='flex '>
+                <div className='flex flex-wrap'>
                     <InputField
                         label={"Basic Salary (₹)"}
                         name={"basic"}
@@ -140,7 +140,7 @@ const Salary = ({ employeeId }) => {
                     />
                 </div>
 
-                <div className='flex mt-2 '>
+                <div className='flex mt-2 flex-wrap '>
                     <InputField
                         label={"Special Allowance(SPA)(%)"}
                         name={"SPA"}
@@ -182,7 +182,7 @@ const Salary = ({ employeeId }) => {
                         minLen={1}
                     />
                 </div>
-                <div className='flex mt-2'>
+                <div className='flex  flex-wrap mt-2'>
                     <InputField
                         label={"Conveyance Allowance(%)"}
                         name={"conveyance"}
@@ -224,7 +224,7 @@ const Salary = ({ employeeId }) => {
                         minLen={1}
                     />
                 </div>
-                <div className='flex mt-2'>
+                <div className='flex flex-wrap mt-2 sm:flex-nowrap'>
                     <div className='flex-col text-sm text-[#64728c] m-2' >
                         <div className='ml-3'>
                             <label className='m-2 text-xs text-[#64728c]'>Total Earnings</label>
@@ -268,7 +268,7 @@ const Salary = ({ employeeId }) => {
                 <div className='h-1'>
                     <p className="text-xs text-red-400 font-light ml-4">{errorMessage}</p>
                 </div>
-                <div className='flex justify-end mt-4 p-4'>
+                <div className='flex justify-center mt-4 p-4 sm:justify-end'>
                     <ResetButton isDirty={isDirty} reset={reset} />
                     <Button isDirty={isDirty} />
 

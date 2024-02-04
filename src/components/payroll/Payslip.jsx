@@ -284,7 +284,7 @@ const Payslip = ({ open, closeSlip, employee, salary }) => {
                             />
                         </div>
                         <div className='flex justify-center'>
-                            <PDFViewer width="60%" height="750px">
+                            <PDFViewer width="80%" height="750px">
                                 <MyDocument />
                             </PDFViewer>
                         </div>

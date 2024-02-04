@@ -52,8 +52,8 @@ const CardContainer = ({ openForm }) => {
     }
 
     return (
-        <div className='bg-[#efefef] ml-60 rounded-sm flex-col p-8 mt-6 pt-12 '>
-            <div className='bg-[#efefef] sticky top-[64px] '>
+        <div className='bg-[#efefef]  rounded-sm flex-col p-8  pt-12 sm:ml-60 sm:mt-0'>
+            <div className='bg-[#efefef] '>
                 <MiniHeader grid={grid} toggleView={toggleView} openForm={openForm} />
                 <SearchBar search={handleSearch} />
             </div>

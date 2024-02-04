@@ -20,8 +20,8 @@ const SearchBar = ({ search }) => {
     };
 
     return (
-        <div className='bg-[#efefef]' >
-            <form onSubmit={handleSubmit}>
+        <div className='bg-[#efefef] '>
+            <form onSubmit={handleSubmit} className='px-3 sm:px-0 ' >
                 <input
                     className="outline-none pl-3 w-64 h-10 text-sm m-3 mb-6 rounded-md"
                     type='text'
@@ -47,7 +47,7 @@ const SearchBar = ({ search }) => {
                     Search
                 </button>
             </form>
-        </div>
+        </div >
     );
 };
 

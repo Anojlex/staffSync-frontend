@@ -7,14 +7,14 @@ const useFetchLeave = (setIsLoading) => {
     const dispatch = useDispatch();
 
     const fetchLeaveData = async () => {
-        console.log("fetching");
+
         try {
             if (typeof setIsLoading === 'function') {
                 setIsLoading(true);
             }
 
             const response = await axiosInstance.get('/users/leaveData');
-            console.log("ftecched");
+
             dispatch(addLeave(response.data));
 
             if (typeof setIsLoading === 'function') {
@@ -30,7 +30,7 @@ const useFetchLeave = (setIsLoading) => {
     };
 
     useEffect(() => {
-        console.log("useeffect callled");
+
         fetchLeaveData();
     }, []);
 

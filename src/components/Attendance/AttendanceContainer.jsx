@@ -32,7 +32,7 @@ const AttendanceContainer = () => {
     const filteredAttendance = attendance?.find((attend) => attend.date === currentSelectedDate) || [];
 
     return (
-        <div className='bg-[#e6e4ef] h-full ml-60 rounded-sm flex-col p-8 mt-6 pt-12'>
+        <div className=' md: bg-[#e6e4ef] h-full sm:ml-60 rounded-sm flex-col p-8 mt-6 pt-12'>
             {isLoading ? (
                 <div className='flex justify-center pr-36 '>
                     <LoadingSpinner />
@@ -41,7 +41,7 @@ const AttendanceContainer = () => {
                 <>
                     <OverView attendance={filteredAttendance} />
                     <div className='flex-col'>
-                        <div className='flex'>
+                        <div className='flex flex-wrap'>
                             <MarkAttendance changeDate={changeDate} date={currentSelectedDate} today={today} />
                             <Present today={today} />
                         </div>

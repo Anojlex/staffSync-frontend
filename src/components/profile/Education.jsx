@@ -78,9 +78,9 @@ const Education = ({ employeeId }) => {
                 }
             </div>
             <hr />
-            <form onSubmit={handleSubmit(onSubmit)} className='flex-col w-12% h-fit bg-[#ffffff] rounded-md p-8 '>
+            <form onSubmit={handleSubmit(onSubmit)} className='flex-col w-12% h-fit bg-[#ffffff] rounded-md  '>
                 {fields.map((item, index) => (
-                    <div className='flex' key={item.id}>
+                    <div className='flex flex-wrap' key={item.id} >
                         <span className='text-[#64728c] mt-11'>.{index + 1}</span>
                         <InputField
                             label={`Qualification`}
@@ -124,7 +124,7 @@ const Education = ({ employeeId }) => {
                 ))
                 }
 
-                <div className='flex  justify-end '>
+                <div className='flex  justify-center  sm:justify-end '>
 
                     <ResetButton isDirty={isDirty} reset={reset} />
                     <Button isDirty={isDirty} />

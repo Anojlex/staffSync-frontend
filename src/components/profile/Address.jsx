@@ -73,7 +73,7 @@ const Address = ({ employeeId }) => {
 
 
     return (
-        <div className='w-full bg-white mt-5 p-5  rounded-md shadow-md flex-col '>
+        <div className='w-full bg-white mt-5   rounded-md shadow-md flex-col '>
 
             <div className='flex justify-between'>
                 <h6 className='text-[#64728c] m-1'>Address</h6>
@@ -84,7 +84,7 @@ const Address = ({ employeeId }) => {
                 onSubmit={handleSubmit(onSubmit)}
                 className='flex-col w-12% h-fit bg-[#ffffff] rounded-md  p-2 '
             >
-                <div className='flex '>
+                <div className='flex flex-wrap '>
                     <InputField
                         label={"Building no/Name"}
                         name={"houseNo"}
@@ -128,7 +128,7 @@ const Address = ({ employeeId }) => {
 
                 </div>
 
-                <div className='flex '>
+                <div className='flex flex-wrap'>
                     <InputField
                         label={"District"}
                         name={"district"}
@@ -174,7 +174,7 @@ const Address = ({ employeeId }) => {
                 <div className='h-1'>
                     <p className="text-xs text-red-400 font-light ml-4">{errorMessage}</p>
                 </div>
-                <div className='flex justify-end mt-4 p-4'>
+                <div className='flex justify-center mt-4 p-4 sm:justify-end'>
                     <ResetButton isDirty={isDirty} reset={reset} />
                     <Button isDirty={isDirty} />
 

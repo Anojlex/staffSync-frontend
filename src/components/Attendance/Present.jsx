@@ -27,13 +27,13 @@ const Present = ({ today }) => {
 
 
     return (
-        <div className='bg-white rounded-xl shadow-sm w-[25%] h-[500px] p-2  mt-3'>
+        <div className='bg-white rounded-xl shadow-sm w-[100%] sm:w-[30%] h-[500px] p-2  mt-3 m-1'>
             <div className='flex justify-center  h-10 text-[#64728c]  pt-2 '>
                 <img onClick={() => changedate("prev")} className="w-4 h-4 mt-1 mr-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-left' />
                 <div className='w-20 flex justify-center'> {isToday ? "Today" : selectedDate}</div>
                 <img onClick={() => changedate("next")} className="w-4 h-4 mt-1 ml-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-right' />
             </div>
-            <div className='bg-white h-[380px] p-1 overflow-y-auto max-h-[calc(100vh-14rem)]' style={{
+            <div className='bg-white h-[400px] p-1 overflow-y-auto max-h-[calc(100vh-14rem)]' style={{
                 scrollbarWidth: 'none'
             }}>
                 {filteredAttendance?.absent?.map((att, index) => (

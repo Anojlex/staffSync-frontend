@@ -81,7 +81,7 @@ const EmergencyContact = ({ employeeId }) => {
                 onSubmit={handleSubmit(onSubmit)}
                 className='flex-col w-12% h-fit bg-[#ffffff] rounded-md  p-2 '
             >
-                <div className='flex '>
+                <div className='flex flex-wrap '>
                     <InputField
                         label={"Contact Person"}
                         name={"name"}
@@ -129,7 +129,7 @@ const EmergencyContact = ({ employeeId }) => {
                 <div className='h-1'>
                     <p className="text-xs text-red-400 font-light ml-4">{errorMessage}</p>
                 </div>
-                <div className='flex justify-end mt-4 p-4'>
+                <div className='flex justify-center mt-4 p-4 sm:justify-end'>
                     <ResetButton isDirty={isDirty} reset={reset} />
                     <Button isDirty={isDirty} />
 

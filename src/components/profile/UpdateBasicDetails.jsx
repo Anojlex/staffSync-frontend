@@ -112,9 +112,9 @@ const UpdateBasicDetails = ({ employeeId }) => {
         <div>
             <form
                 onSubmit={handleSubmit(onSubmit)}
-                className='flex-col w-12% h-fit bg-[#ffffff] rounded-md  p-2 '
+                className='flex-col w-12% h-fit bg-[#ffffff] rounded-md  p-2  '
             >
-                <div className='flex '>
+                <div className='flex flex-wrap  '>
                     < InputField
                         label={"First Name"}
                         name={"firstname"}
@@ -147,7 +147,7 @@ const UpdateBasicDetails = ({ employeeId }) => {
                         validateEmail={true}
                     />
                 </div >
-                <div className='flex '>
+                <div className='flex flex-wrap '>
 
                     <InputField
                         label={"Phone"}
@@ -181,7 +181,7 @@ const UpdateBasicDetails = ({ employeeId }) => {
                         errors={errors}
                     />
                 </div>
-                <div className='flex '>
+                <div className='flex flex-wrap'>
                     <SelectField
                         label="Department"
                         name="department"
@@ -202,7 +202,7 @@ const UpdateBasicDetails = ({ employeeId }) => {
                     />
                 </div>
 
-                <div className='flex justify-end mt-4 p-4'>
+                <div className='flex justify-center mt-4 p-4 sm:justify-end'>
                     <ResetButton isDirty={isDirty} reset={reset} />
                     <Button isDirty={isDirty} />
 

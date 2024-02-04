@@ -19,7 +19,7 @@ const EmployeeProfile = () => {
     return (
         <>
             <Header />
-            <Sidebar active={"dashboard"} />
+            <Sidebar active={"directory"} />
             <Profile employeeId={employeeId} openForm={openForm} />
 
         </>

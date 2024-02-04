@@ -11,7 +11,7 @@ const BasicDetails = ({ employee, employeeId }) => {
                 <h6 className='text-[#64728c] m-1'>Basic Details</h6>
             </div >
             <hr className='m-1 ' />
-            <div className='flex justify-between'>
+            <div className='flex justify-between flex-wrap'>
                 <ProfilePic employeeId={employeeId} employee={employee} />
                 <UpdateBasicDetails employeeId={employeeId} employeeData={employee} />
             </div>

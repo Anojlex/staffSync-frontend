@@ -61,7 +61,7 @@ const LeaveList = ({ setOpen, setAction, setLeaveId, setComment }) => {
     };
 
     return (
-        <div className='bg-[#f4f3f9] h-full ml-60 rounded-sm flex-col p-8 mt-6 pt-12'>
+        <div className='bg-[#f4f3f9] h-full  rounded-sm flex-col p-8 mt-6 pt-12 sm:ml-60'>
 
             < SearchLeave search={handleSearch} />
             {isLoading ? (
@@ -73,7 +73,7 @@ const LeaveList = ({ setOpen, setAction, setLeaveId, setComment }) => {
                     <div className='bg-white h-16 rounded-t-3xl text-sm  text-[#64728c] p-6'>
                         ({filteredLeave.length > 0 ? filteredLeave.length : leaveData.length})Records found</div>
 
-                    <div className='flex items-center bg-slate-300 h-10 m-3 text-xs font-sans-regular rounded-t-md text-[#506181] '>
+                    <div className=' hidden  items-center bg-slate-300 h-10 m-3 text-xs font-sans-regular rounded-t-md text-[#506181] sm:flex'>
                         <div className='flex-1 px-3 text-center'>Date of Application</div>
                         <div className='flex-1 px-3 text-center'>Employee</div>
                         <div className='flex-1 px-3 text-center'>Type</div>

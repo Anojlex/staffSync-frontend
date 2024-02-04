@@ -41,11 +41,11 @@ const OverView = ({ attendance }) => {
     const unplannedLeave = attendance?.absent?.length - numberOfApprovedLeavesToday;
 
     return (
-        <div className='w-full h-40 bg-white mt-5 flex-col p-1 rounded-md text-[#64728c]'>
+        <div className='w-full sm:h-40 bg-white mt-5 flex-col p-1 rounded-md text-[#64728c]'>
             <div className='ml-3 p-3 '>Attendance</div>
             <div className='flex flex-wrap justify-center items-center'>
-                <AttendanceInfoCard title="Today Present" value={`${attendance?.present?.length} / ${employee.length}`} />
-                <AttendanceInfoCard title="Planned leave" value={numberOfApprovedLeavesToday} />
+                <AttendanceInfoCard title="Today Present" value={`${attendance?.present?.length <= 0 || undefined ? 0 : attendance.present.length}/${employee.length}`} />
+                < AttendanceInfoCard title="Planned leave" value={numberOfApprovedLeavesToday} />
                 <AttendanceInfoCard title="Unplanned leave" value={unplannedLeave < 0 ? 0 : isNaN(unplannedLeave) ? 0 : unplannedLeave} />
             </div>
         </div>

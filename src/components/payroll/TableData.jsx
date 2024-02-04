@@ -39,13 +39,13 @@ const TableData = ({ employee, openSlip }) => {
     };
 
     return (
-        <div className='flex items-center border-b h-14 mt-3 bg-slate-200 text-xs font-normal rounded-xl'>
-            <div className='flex-1 px-3 text-left'>{employee.firstname + employee.lastname}</div>
-            <div className='flex-1 px-3 text-center'>{employee.empID}</div>
-            <div className='flex-1 px-3 text-center'>{isNaN(totalEarnings) ? 0 : totalEarnings}</div>
-            <div className='flex-1 px-3 text-center'>{isNaN(totalDeductions) ? 0 : totalDeductions}</div>
-            <div className='flex-1 px-3 text-center'>{isNaN(netSalary ? 0 : netSalary)}</div>
-            <div className='flex-1 px-3 justify-between'>
+        <div className='sm:flex items-center border-b sm:h-14 mt-3 bg-slate-200 text-xs font-normal rounded-xl'>
+            <div className='flex-1 px-3 text-left'><p className=' font-bold sm:hidden '>Name</p>{employee.firstname + employee.lastname}</div>
+            <div className='flex-1 px-3 sm:text-center'><p className=' font-bold sm:hidden '>Emp ID</p>{employee.empID}</div>
+            <div className='flex-1 px-3 sm:text-center'><p className=' font-bold sm:hidden '>Total Earnings</p>{isNaN(totalEarnings) ? 0 : totalEarnings}</div>
+            <div className='flex-1 px-3 sm:text-center'><p className=' font-bold sm:hidden '>Total Deductions</p>{isNaN(totalDeductions) ? 0 : totalDeductions}</div>
+            <div className='flex-1 px-3 sm;text-center'><p className=' font-bold sm:hidden '>Net Salary</p>{isNaN(netSalary) ? 0 : netSalary}</div>
+            <div className='flex-1 sm:px-3 p-1 justify-between'>
                 <img className="w-5 h-5 ml-10" src='https://img.icons8.com/windows/32/download--v1.png' alt='' />
                 <p onClick={openPaySlip} className='text-xs w-16 ml-5 text-center cursor-pointer hover:text-blue-500'>PaySlip</p>
             </div>

@@ -17,7 +17,7 @@ const Profile = ({ employeeId, openForm }) => {
 
 
     return (
-        <div className='bg-[#efefef] ml-60 rounded-sm flex-col p-8 mt-6 pt-12 '>
+        <div className='bg-[#efefef]  rounded-sm flex-col p-8 mt-6 pt-12 sm:ml-60'>
 
             <BasicDetails employee={employee} openForm={openForm} employeeId={employeeId} />
             <Address employeeId={employeeId} />

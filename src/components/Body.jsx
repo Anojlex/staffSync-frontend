@@ -1,6 +1,6 @@
 import React from 'react'
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Dashboard from './dashboard/Dashboard.jsx';
+import Directory from './emloyeeDirectory/Directory.jsx';
 import Login from './login/Login.jsx';
 import EmployeeProfile from './profile/EmployeeProfile.jsx';
 import LeaveManagement from './leave Management/LeaveManagement.jsx';
@@ -9,6 +9,7 @@ import Connect from './Connect.jsx';
 import Attendance from './Attendance/Attendance.jsx';
 
 import ProfilePic from './cropper/Profile.jsx';
+import Dashboard from './dashboard/Dashboard.jsx';
 
 const Body = () => {
 
@@ -17,6 +18,10 @@ const Body = () => {
         {
             path: "/home",
             element: <Dashboard />,
+        },
+        {
+            path: "/directory",
+            element: <Directory />,
         },
         {
             path: "/",
