@@ -16,9 +16,11 @@ import ChangePassword from './ChangePassword.jsx';
 const UpdateBasicDetails = ({ employeeId }) => {
     const dispatch = useDispatch()
     const [open, setOpen] = useState(false)
-    const employee = useSelector(state => {
-        return state.employee.data.find(emp => emp._id === employeeId) || null;
-    });
+    const employeeData = useSelector(state => state?.employee)
+    const [employees, setEmployees] = useState(employeeData)
+
+    const employee = employees?.data?.find(emp => emp._id === employeeId)
+
     const formattedJoiningDate = employee.joiningDate.split('-').reverse().join('-');
 
     const { register, handleSubmit, formState: { errors, isDirty }, setValue, getValues, reset } = useForm({

@@ -71,7 +71,7 @@ const MonthlyAttendance = () => {
 
 
                 {employee.map((emp) => (
-                    <div key={emp._id} className='flex  items-center border-b h-12 m-3 pr-10 bg-slate-200 text-sm  text-[#64728c] w-[140%]'>
+                    <div key={emp._id} className='flex  items-center border-b h-12 m-3 pr-10  text-sm  text-[#64728c] '>
                         <div className='flex'>
                             <div className='w-24 m-2 text-start px-2'>{emp.firstname} {emp.lastname}</div>
                             <div className='w-16 m-2 text-start'>{emp.empID}</div>

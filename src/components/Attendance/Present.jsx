@@ -20,7 +20,7 @@ const Present = ({ today }) => {
 
     }
 
-    const attendance = useSelector((state) => state.attendance?.data) || [];
+    const attendance = useSelector((state) => state?.attendance?.data) || [];
     const filteredAttendance = attendance?.find((attend) => attend.date === selectedDate) || []
 
     const isToday = selectedDate === today
@@ -33,17 +33,17 @@ const Present = ({ today }) => {
                 <div className='w-20 flex justify-center'> {isToday ? "Today" : selectedDate}</div>
                 <img onClick={() => changedate("next")} className="w-4 h-4 mt-1 ml-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-right' />
             </div>
-            <div className='bg-white h-[400px] p-1 overflow-y-auto max-h-[calc(100vh-14rem)]' style={{
+            <div className='bg-white h-[430px] p-1 overflow-y-auto max-h-[calc(100vh-14rem)]' style={{
                 scrollbarWidth: 'none'
             }}>
                 {filteredAttendance?.absent?.map((att, index) => (
-                    <div className="bg-slate-200 h-8 flex justify-between rounded-md p-2 text-xs  text-red-600 mt-2" key={index}>
+                    <div className="bg-slate-200 h-10 flex justify-between rounded-md p-2 text-xs  text-red-600 mt-2" key={index}>
                         <div>{att.firstname}{att.lastname}</div>
                         <div>{att.empID}</div>
                     </div>
                 ))}
                 {filteredAttendance?.present?.map((att, index) => (
-                    < div className="bg-slate-200 h-8 flex justify-between rounded-md p-2 text-xs  text-green-600 mt-2" key={index} >
+                    < div className="bg-slate-200 h-10 flex justify-between rounded-md p-2 text-xs  text-green-600 mt-2" key={index} >
                         <div>{att.firstname}{att.lastname}</div>
                         <div>{att.empID}</div>
                     </div>

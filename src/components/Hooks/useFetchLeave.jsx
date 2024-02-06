@@ -14,7 +14,7 @@ const useFetchLeave = (setIsLoading) => {
             }
 
             const response = await axiosInstance.get('/users/leaveData');
-
+            console.log(response.data);
             dispatch(addLeave(response.data));
 
             if (typeof setIsLoading === 'function') {

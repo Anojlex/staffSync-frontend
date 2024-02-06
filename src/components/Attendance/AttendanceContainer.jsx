@@ -11,9 +11,9 @@ import { getTodaysDate, formatDate } from '../Utils/dateUtils';
 const AttendanceContainer = () => {
     const [isLoading, setIsLoading] = useState(false);
 
-    const attendance = useSelector((state) => state.attendance?.data) || [];
-    useFetchAttendance(setIsLoading);
 
+    useFetchAttendance(setIsLoading);
+    const attendance = useSelector((state) => state.attendance?.data) || [];
     const today = getTodaysDate();
     const [currentSelectedDate, setCurrentSelectedDate] = useState(today);
 

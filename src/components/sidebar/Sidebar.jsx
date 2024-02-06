@@ -3,22 +3,26 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { removeEmployee } from '../Utils/employeeSlice';
 import { removeAdmin } from '../Utils/adminSlice.jsx';
-
+import { removeAttendance } from '../Utils/attendanceSlice.jsx';
+import { removeLeave } from '../Utils/leaveSlice.jsx';
 
 const Sidebar = ({ active }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const accessToken = useSelector(state => state.admin?.data?.accessToken)
+
     const logout = () => {
 
         dispatch(removeAdmin());
         dispatch(removeEmployee());
+        dispatch(removeAttendance())
+        dispatch(removeLeave())
         navigate('/');
 
     }
     const style = "text-white bg-orange-600 bg-gradient-to-r from-orange-500";
     return (
-        <div className='bg-[#34444c] text-sm shadow-2xl text-gray-50  left-0  h-auto w-screen sm:h-screen sm:w-56 sm:fixed sm:top-16'>
+        <div className='bg-[#34444c] text-sm shadow-2xl text-gray-50  left-0  h-auto w-screen sm:h-screen sm:w-60 sm:fixed sm:top-16'>
             <ul className='font-sans subpixel-antialiased flex-col'>
                 <li className='text-2xl font-mono p-1 flex mt-4 mb-10'>
                     <img className="w-12 h-12 p-1" src="https://img.icons8.com/ios/100/FD7E19/connection-sync.png" alt='' />

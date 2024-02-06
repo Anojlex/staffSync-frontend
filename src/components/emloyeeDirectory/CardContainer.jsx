@@ -10,17 +10,18 @@ import LoadingSpinner from '../Spinner';
 
 const CardContainer = ({ openForm }) => {
 
-
+    const [isLoading, setIsLoading] = useState(false);
+    useFetchEmployee(setIsLoading);
 
     const navigate = useNavigate();
     const [grid, setGrid] = useState(true);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
-    const employee = useSelector((state) => state.employee.data) || [];
+    const employeeData = useSelector((state => state.employee)) || [];
+    const employee = employeeData?.data;
 
-    const [isLoading, setIsLoading] = useState(false);
-    console.log(isLoading);
-    useFetchEmployee(setIsLoading)
-    console.log(isLoading);
+
+
+
     const openEmpDetail = (employeeId) => {
         navigate(`/empDetail/${employeeId}`);
     };

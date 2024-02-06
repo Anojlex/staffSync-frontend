@@ -67,7 +67,7 @@ const MarkAttendance = ({ changeDate, date, today }) => {
 
     const isToday = date === today
     return (
-        <div className='bg-white rounded-xl shadow-sm w-[100%] sm:w-[70%] h-[500px] p-2  mt-3 mr-2 ' >
+        <div className='bg-white rounded-xl shadow-sm w-[100%] sm:w-[68%] h-[500px] p-2  mt-3 mr-2 ' >
             <div className='flex justify-center  h-8 text-[#64728c]font-mono pt-2 ' >
                 < img onClick={() => changeDate("prev")} className="w-4 h-4 mt-1 mr-5 " src='https://img.icons8.com/tiny-glyph/32/737373/circled-chevron-left' />
                 <div className='text-[#444e61] w-20 flex justify-center'>{isToday ? "Today" : date}</div>

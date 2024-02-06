@@ -2,20 +2,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const employeeSlice = createSlice({
     name: "employee",
-    initialState: { data: [] },
+    initialState: {
+        data: []
+    },
     reducers: {
-
         addEmployee: (state, action) => {
-
-            return action.payload;
-
+            return action.payload
         },
         removeEmployee: (state, action) => {
-            return [];
+            return { data: [] }
         },
     },
 });
 
-export const { startLoading, addEmployee, removeEmployee } = employeeSlice.actions;
+export const { addEmployee, removeEmployee } = employeeSlice.actions;
 
 export default employeeSlice.reducer;

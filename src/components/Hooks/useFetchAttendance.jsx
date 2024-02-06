@@ -12,6 +12,7 @@ const useFetchAttendance = (setIsLoading) => {
                 setIsLoading(true);
             }
             const response = await axiosInstance.get('/users/attendanceData');
+            console.log(response.data);
             dispatch(addAttendance(response.data));
 
             if (typeof setIsLoading === 'function') {
